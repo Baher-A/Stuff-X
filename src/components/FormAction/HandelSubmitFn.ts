@@ -1,6 +1,6 @@
 "use server";
 
-import { Create_New_Keep_In_Touch_Request } from "@/Prisma_Db";
+import { Create_New_Keep_In_Touch_Request } from "@/lib/db";
 
 export const HandelsubmitFun = async (
   prev: { success: boolean },

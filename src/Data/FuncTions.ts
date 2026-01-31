@@ -1,6 +1,6 @@
 "use server";
 import { Blogtype } from "./FakeBlogs";
-import { Edit_Blog } from "@/Prisma_Db";
+import { Edit_Blog } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { AuthSession } from "../../types/auth";

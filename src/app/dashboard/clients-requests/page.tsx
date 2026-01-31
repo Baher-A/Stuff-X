@@ -1,5 +1,5 @@
 import ContactRequests from "@/components/Contact_Requests/ContactRequests";
-import { Get_All_Keep_In_Touch_Requests } from "@/Prisma_Db";
+import { Get_All_Keep_In_Touch_Requests } from "@/lib/db";
 import React from "react";
 
 const Stay_In_Touch_Requests = async () => {

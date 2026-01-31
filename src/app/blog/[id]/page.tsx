@@ -1,4 +1,4 @@
-import { getpost } from "@/Prisma_Db";
+import { getpost } from "@/lib/db";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";

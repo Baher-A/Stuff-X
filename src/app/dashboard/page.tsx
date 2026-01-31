@@ -8,7 +8,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { GET_Last_Requests, getLastBlogs, Prisma } from "@/Prisma_Db";
+import { GET_Last_Requests, getLastBlogs } from "@/lib/db";
+import { prisma } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import {
   FileText,
@@ -19,13 +20,14 @@ import {
 import Link from "next/link";
 import React from "react";
 import { AuthSession } from "../../../types/auth";
+import { Blogtype } from "@/Data/FakeBlogs";
 
 const Dash_Board_Home_Page = async () => {
   const session = (await auth()) as AuthSession;
 
   const [TotalBlo, TotalReq, Last_Req, Last_Blog] = await Promise.all([
-    Prisma.post.count(),
-    Prisma.requestes.count(),
+    prisma.post.count(),
+    prisma.requestes.count(),
     GET_Last_Requests(),
     getLastBlogs(),
   ]);
@@ -82,7 +84,7 @@ const Dash_Board_Home_Page = async () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {Last_Blog.map((Blog) => {
+              {Last_Blog.map((Blog: Blogtype) => {
                 return (
                   <TableRow
                     key={Blog.id}
@@ -132,24 +134,31 @@ const Dash_Board_Home_Page = async () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {Last_Req.map((Blog) => {
-                return (
-                  <TableRow
-                    key={Blog.id}
-                    className="border-accent-foreground  text-Text-secondary text-center  "
-                  >
-                    <TableCell className="truncate p-5 border-accent-foreground border-r ">
-                      {Blog.Client_Email}
-                    </TableCell>
-                    <TableCell className=" border-accent-foreground p-5 border-l ">
-                      {Blog.Client_Name}
-                    </TableCell>
-                    <TableCell className=" border-accent-foreground p-5 border-l ">
-                      {Blog.Client_Message}
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
+              {Last_Req.map(
+                (Requ: {
+                  id: string;
+                  Client_Email: string;
+                  Client_Name: string;
+                  Client_Message: string;
+                }) => {
+                  return (
+                    <TableRow
+                      key={Requ.id}
+                      className="border-accent-foreground  text-Text-secondary text-center  "
+                    >
+                      <TableCell className="truncate p-5 border-accent-foreground border-r ">
+                        {Requ.Client_Email}
+                      </TableCell>
+                      <TableCell className=" border-accent-foreground p-5 border-l ">
+                        {Requ.Client_Name}
+                      </TableCell>
+                      <TableCell className=" border-accent-foreground p-5 border-l ">
+                        {Requ.Client_Message}
+                      </TableCell>
+                    </TableRow>
+                  );
+                },
+              )}
             </TableBody>
           </Table>
           <div className=" flex items-center justify-end p-3  ">

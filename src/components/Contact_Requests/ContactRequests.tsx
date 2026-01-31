@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import Form from "next/form";
 import { revalidatePath } from "next/cache";
-import { Delete_Request } from "@/Prisma_Db";
+import { Delete_Request } from "@/lib/db";
 import { CircleX } from "lucide-react";
 import { auth } from "@clerk/nextjs/server";
 import { AuthSession } from "../../../types/auth";

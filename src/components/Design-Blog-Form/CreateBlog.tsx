@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 import { Blogtype, categories } from "@/Data/FakeBlogs";
-import { Create_New_Blog } from "@/Prisma_Db";
+import { Create_New_Blog } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import Form from "next/form";
 import { FilePlus } from "lucide-react";

@@ -1,4 +1,5 @@
-import { getblogs, Prisma } from "@/Prisma_Db";
+import { getblogs } from "@/lib/db";
+import { prisma } from "@/lib/prisma";
 import React from "react";
 import Link from "next/link";
 import { Blogtype } from "@/Data/FakeBlogs";
@@ -10,7 +11,7 @@ import Blog_Pagniation from "@/components/Blogs-Pagenations/Blog_Pagniation";
 const Blog = async ({ searchParams }: { searchParams: { page?: string } }) => {
   // const pagenum = Number(await searchParams.page) || 1;
   const pagenum = Number((await searchParams).page) || 1;
-  const Count = Math.ceil((await Prisma.post.count()) / 6);
+  const Count = Math.ceil((await prisma.post.count()) / 6);
   const All_Blogs: Blogtype[] = await getblogs(pagenum);
   return (
     <main className="flex-1 container mx-auto p-7 w-[90%] flex flex-col justify-between">

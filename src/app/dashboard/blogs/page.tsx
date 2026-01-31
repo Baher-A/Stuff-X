@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Blogtype } from "@/Data/FakeBlogs";
-import { Delete_Blog, getAllblogs } from "@/Prisma_Db";
+import { Delete_Blog, getAllblogs } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { XIcon } from "lucide-react";
 import { revalidatePath } from "next/cache";
