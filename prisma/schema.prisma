@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+
+  title String
+
+  note String
+
+  content String
+
+  author String
+
+  image String
+
+  category String
+
+  readTime String
+
+  date String
+}
+
+model Requestes {
+  id Int @id @default(autoincrement())
+
+  Client_Name String
+
+  Client_Email String
+
+  Client_Message String
+}
