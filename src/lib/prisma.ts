@@ -1,15 +1,14 @@
-import { PrismaClient } from "@prisma/client";
-
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
+import "dotenv/config";
+import { PrismaClient } from "../../generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Default_Blogs } from "@/Data/FakeBlogs";
+const connectionString = `${process.env.DATABASE_URL}`;
+const adapter = new PrismaPg({ connectionString });
+export const prisma = new PrismaClient({ adapter });
+const seedpost = async () => {
+  const count = await prisma.post.count();
+  if (count === 0) {
+    await prisma.post.createMany({ data: Default_Blogs });
+  }
 };
-
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log: ["error"],
-  });
-
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
-}
+seedpost();

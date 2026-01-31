@@ -84,7 +84,7 @@ const Dash_Board_Home_Page = async () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {Last_Blog.map((Blog: Blogtype) => {
+              {Last_Blog.map((Blog) => {
                 return (
                   <TableRow
                     key={Blog.id}
@@ -134,31 +134,24 @@ const Dash_Board_Home_Page = async () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {Last_Req.map(
-                (Requ: {
-                  id: string;
-                  Client_Email: string;
-                  Client_Name: string;
-                  Client_Message: string;
-                }) => {
-                  return (
-                    <TableRow
-                      key={Requ.id}
-                      className="border-accent-foreground  text-Text-secondary text-center  "
-                    >
-                      <TableCell className="truncate p-5 border-accent-foreground border-r ">
-                        {Requ.Client_Email}
-                      </TableCell>
-                      <TableCell className=" border-accent-foreground p-5 border-l ">
-                        {Requ.Client_Name}
-                      </TableCell>
-                      <TableCell className=" border-accent-foreground p-5 border-l ">
-                        {Requ.Client_Message}
-                      </TableCell>
-                    </TableRow>
-                  );
-                },
-              )}
+              {Last_Req.map((Requ) => {
+                return (
+                  <TableRow
+                    key={Requ.id}
+                    className="border-accent-foreground  text-Text-secondary text-center  "
+                  >
+                    <TableCell className="truncate p-5 border-accent-foreground border-r ">
+                      {Requ.Client_Email}
+                    </TableCell>
+                    <TableCell className=" border-accent-foreground p-5 border-l ">
+                      {Requ.Client_Name}
+                    </TableCell>
+                    <TableCell className=" border-accent-foreground p-5 border-l ">
+                      {Requ.Client_Message}
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
             </TableBody>
           </Table>
           <div className=" flex items-center justify-end p-3  ">
