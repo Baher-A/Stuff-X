@@ -1,6 +1,6 @@
 # Stuff X Project
 
-A modern web application built with Next.js.
+it's one of my Portofolio Projects ===> Stuff-X <===
 
 ## Tech Stack
 
