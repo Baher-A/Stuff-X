@@ -28,8 +28,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
+# env files (Clerk / DB / Secrets)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -37,6 +38,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-
-
+# prisma generated client
 /generated/prisma
