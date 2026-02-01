@@ -3,6 +3,11 @@ import Link from "next/link";
 import React from "react";
 import MeetingImage from "../../../public/Metting.jpg";
 import styles from "./page.module.css";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "A lote of Informaion About Our Team",
+};
 const About = () => {
   return (
     <div className="flex-1 flex flex-col gap-10  container mx-auto">

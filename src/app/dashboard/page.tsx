@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { GET_Last_Requests, getLastBlogs } from "@/lib/db";
-import { prisma } from "@/lib/prisma";
+import { prismaclient } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import {
   FileText,
@@ -20,14 +20,13 @@ import {
 import Link from "next/link";
 import React from "react";
 import { AuthSession } from "../../../types/auth";
-import { Blogtype } from "@/Data/FakeBlogs";
 
 const Dash_Board_Home_Page = async () => {
   const session = (await auth()) as AuthSession;
 
   const [TotalBlo, TotalReq, Last_Req, Last_Blog] = await Promise.all([
-    prisma.post.count(),
-    prisma.requestes.count(),
+    prismaclient.post.count(),
+    prismaclient.requestes.count(),
     GET_Last_Requests(),
     getLastBlogs(),
   ]);

@@ -4,7 +4,11 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import SubmitNotification from "@/components/NotificationComp/SubmitNotification";
 const tex = "Let's Keep in Touch";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Send Requests For webSite Manager",
+};
 const Contact = () => {
   return (
     <div className="flex-1 flex flex-col  gap-10  items-center justify-center relative container mx-auto ">

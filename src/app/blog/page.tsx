@@ -1,5 +1,5 @@
 import { getblogs } from "@/lib/db";
-import { prisma } from "@/lib/prisma";
+import { prismaclient } from "@/lib/prisma";
 import React from "react";
 import Link from "next/link";
 import { Blogtype } from "@/Data/FakeBlogs";
@@ -7,11 +7,14 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import Blog_Pagniation from "@/components/Blogs-Pagenations/Blog_Pagniation";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Bolgs",
+  description: "Show Our Variant Blogs",
+};
 const Blog = async ({ searchParams }: { searchParams: { page?: string } }) => {
-  // const pagenum = Number(await searchParams.page) || 1;
   const pagenum = Number((await searchParams).page) || 1;
-  const Count = Math.ceil((await prisma.post.count()) / 6);
+  const Count = Math.ceil((await prismaclient.post.count()) / 6);
   const All_Blogs: Blogtype[] = await getblogs(pagenum);
   return (
     <main className="flex-1 container mx-auto p-7 w-[90%] flex flex-col justify-between">
@@ -28,7 +31,7 @@ const Blog = async ({ searchParams }: { searchParams: { page?: string } }) => {
                     alt={blog.title}
                     width={200}
                     height={200}
-                    className="object-cover rounded-xl w-full group-hover:opacity-100 aspect-square  opacity-65 transition-opacity duration-500  "
+                    className="object-fill rounded-xl w-full group-hover:opacity-100 aspect-square  opacity-65 transition-opacity duration-500  "
                   />
 
                   <CardHeader className="mt-6">

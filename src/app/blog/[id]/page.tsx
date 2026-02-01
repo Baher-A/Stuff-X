@@ -21,7 +21,7 @@ const page = async ({ params }: { params: { id: string } }) => {
               <Image
                 src={Specific_Blog.image}
                 alt={Specific_Blog.title}
-                className="object-cover w-full h-full rounded-full "
+                className="object-fill w-full h-full rounded-full "
                 width={100}
                 height={100}
               />

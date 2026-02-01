@@ -11,7 +11,6 @@ export type Blogtype = {
 };
 export const Default_Blogs: Blogtype[] = [
   {
-    id: 1,
     title: "Better Design for Your Digital Products",
     note: "Learn how thoughtful design decisions can elevate your digital products and improve user experience.",
     content:
@@ -25,8 +24,6 @@ export const Default_Blogs: Blogtype[] = [
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: 2,
-
     title: "Why UX Matters in Modern Digital Products",
     note: "User experience is no longer optional. Discover why UX plays a critical role in product success.",
     content:
@@ -40,8 +37,6 @@ export const Default_Blogs: Blogtype[] = [
       "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: 3,
-
     title: "Design Systems: Building Consistency at Scale",
     note: "Design systems help teams create consistent, scalable, and efficient digital products.",
     content:
@@ -55,7 +50,6 @@ export const Default_Blogs: Blogtype[] = [
       "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: 4,
     title: "How Color Theory Impacts Digital Product Design",
     note: "Colors influence emotions and decisions. Learn how to use color theory effectively in digital products.",
     content:
@@ -69,8 +63,6 @@ export const Default_Blogs: Blogtype[] = [
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: 5,
-
     title: "From Idea to Launch: Building Digital Products",
     note: "A practical guide to turning ideas into successful digital products from concept to launch.",
     content:

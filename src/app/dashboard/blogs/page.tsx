@@ -16,7 +16,11 @@ import { revalidatePath } from "next/cache";
 import Form from "next/form";
 import React from "react";
 import { AuthSession } from "../../../../types/auth";
-
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Manage website Blogs",
+};
 const Blogs = async () => {
   const Data: Blogtype[] = await getAllblogs();
   const Handel_Delete_Request = async (formdata: FormData) => {
