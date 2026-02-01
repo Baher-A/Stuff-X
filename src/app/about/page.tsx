@@ -16,6 +16,7 @@ const About = () => {
           src={MeetingImage}
           alt="Meeting Image With Team"
           className={styles.MainImage}
+          priority
         />
         <div className="absolute bottom-2 left-2 bg-[#53c28b] px-4 py-2 flex  flex-col gap-1 rounded-md">
           <h1 className="text-2xl text-[#EDEDED]">Digital StoryTeller </h1>

@@ -15,7 +15,8 @@ const Footer = () => {
             <Link
               key={Icons.id}
               href={"/"}
-              className="w-7 h-7 opacity-50 hover:opacity-100  transition-all duration-500"
+              aria-label={Icons.name}
+              className="w-7 h-7 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-hidden transition-all duration-500"
             >
               <Image
                 src={Icons.imagge}

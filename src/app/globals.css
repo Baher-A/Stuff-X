@@ -95,4 +95,5 @@ body {
   --color-sidebar-border: var(--color-sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-hover: var(--sidebar-Hover);
+  --color-navbar-surface: #1E1E1A;
 }

@@ -11,61 +11,48 @@ const LimelightFont = Limelight({
 
 const NavBar = () => {
   return (
-    <div className=" flex justify-between lg:justify-evenly  items-center lg:container mx-auto sm:p-2 bg-[#1E1E1A] md:bg-transparent rounded-xl  ">
+    <div className=" flex justify-between lg:justify-evenly  items-center lg:container mx-auto sm:p-2 bg-navbar-surface md:bg-transparent rounded-xl  ">
       <Link
         href={"/"}
-        className={`text-3xl font-bold py-4 px-2 cursor-pointer text-[#2FBF84] ${LimelightFont.className}`}
+        className={`text-3xl font-bold py-4 px-2 cursor-pointer text-primary focus:text-primary-hover focus:outline-hidden ${LimelightFont.className}`}
       >
         Stuff <strong className="text-accent-hover">-</strong> X
       </Link>
 
-      <div className="lg:flex gap-5 items-center hidden ">
-        {NavBar_Links.map((link) => {
-          return (
-            <Link
-              key={link.id}
-              href={link.Url}
-              aria-label={link.Name}
-              className={`py-4 px-2 hover:text-primary-hover  font-bold    transition-colors duration-1000`}
-            >
-              {link.Name}
-            </Link>
-          );
-        })}
+      <div className="flex gap-5 items-center   ">
+        <div className="hidden lg:flex gap-5 ">
+          {NavBar_Links.map((link) => {
+            return (
+              <Link
+                key={link.id}
+                href={link.Url}
+                aria-label={link.Name}
+                className={`py-4 px-2 hover:text-primary-hover focus:text-primary-hover focus:outline-hidden font-bold    transition-colors duration-1000`}
+              >
+                {link.Name}
+              </Link>
+            );
+          })}
+        </div>
 
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-
-        <SignedOut>
-          <SignInButton mode="modal">
-            <button className="cursor-pointer text-primary font-bold hover:text-primary-hover p-2 ">
-              Sing in
-            </button>
-          </SignInButton>
-        </SignedOut>
-      </div>
-
-      {/* In Small Devicies  */}
-
-      <div className="lg:hidden flex items-center gap-5  ">
-        <div>
+        <div className="flex items-center gap-5 lg:block">
           <SignedIn>
-            <div className="pt-2">
+            <div className="pt-2 lg:pt-0">
               <UserButton />
             </div>
           </SignedIn>
 
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="cursor-pointer text-primary font-bold hover:text-primary-hover p-2 ">
-                Sing in
+              <button className="cursor-pointer text-primary font-bold hover:text-primary-hover focus:text-primary-hover focus:outline-hidden p-2 ">
+                Sign in
               </button>
             </SignInButton>
           </SignedOut>
+          <div className="lg:hidden block">
+            <Navigation_Menu />
+          </div>
         </div>
-
-        <Navigation_Menu NavBar_Links={NavBar_Links} />
       </div>
     </div>
   );

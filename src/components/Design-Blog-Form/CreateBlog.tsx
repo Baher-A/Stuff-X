@@ -48,11 +48,11 @@ const CreateBlog = () => {
       <DialogTrigger asChild>
         <button className="flex items-center px-3 py-2 w-fit self-end  justify-center bg-primary-hover hover:bg-primary  cursor-pointer rounded-md transition-colors duration-500">
           <FilePlus className="size-4 stroke-2 mr-2" />
-          <strong className="text-Text-primary   "> Create New Blog</strong>
+          <strong className="text-Text-primary"> Create New Blog</strong>
         </button>
       </DialogTrigger>
 
-      <DialogContent className="w-full lg:max-w-[50%] space-y-2 transition-all duration-500 ">
+      <DialogContent className="w-[80%] lg:max-w-[60%]   space-y-2 transition-all duration-500 ">
         {/* Custome Form Here !! */}
 
         <DialogHeader>

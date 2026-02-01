@@ -9,6 +9,26 @@ export const metadata: Metadata = {
   title: "Stuff-X",
   description: "Better Way to Make Creative Design",
   icons: "/StuffX.png",
+  openGraph: {
+    title: "Stuff-X",
+    description: "Better Way to Make Creative Design",
+    siteName: "Stuff-X",
+    images: [
+      {
+        url: "/StuffX.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stuff-X",
+    description: "Better Way to Make Creative Design",
+    images: ["/StuffX.png"],
+  },
 };
 
 export default function RootLayout({
